@@ -24,8 +24,21 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <!-- {{ config('app.name', 'Laravel') }} -->
+                    EyeProvidence®
                 </a>
+                    <!-- nav propio -->
+                    <div class="logo">
+                        <img src="{{asset('images/logo.webp')}}" width="63" alt="" loading="lazy">
+                    </div>
+                    <div class="main_list" id="mainListDiv">
+                        <ul>
+                            <li><a href="http://127.0.0.1:8000/home">Home</a></li>
+                            <li><a href="http://127.0.0.1:8000/checking">Cheking</a></li>
+                        </ul>
+                    </div>
+    
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

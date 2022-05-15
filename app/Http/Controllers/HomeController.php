@@ -26,9 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function posts()
+    public function checking()
     {
-        return view('posts');
+        return view('checking');
     }
 
     public function login()
