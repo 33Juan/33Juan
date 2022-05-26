@@ -31,6 +31,7 @@ class HomeController extends Controller
     public function checking()
     {
         return view('checking');
+<<<<<<< HEAD
     }
 
     public function store(Request $request)
@@ -42,6 +43,8 @@ class HomeController extends Controller
          $fichaje->save();
 
          return redirect()->route('fichajes', $fichaje);
+=======
+>>>>>>> a8bb7d62ba8a50e8fb412879e9af2f2264a0df60
     }
 
     public function login()

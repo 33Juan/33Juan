@@ -63,6 +63,7 @@
             </a>
         </div>
 
+<<<<<<< HEAD
          <!-- Botonoes -->
 
          <form action="{{route('checking.store')}}" method="POST">
@@ -80,6 +81,16 @@
         <div class="botones2">
             <button type="submit" class="btn btn-outline-primary">Primary</button>
         </div>
+=======
+        <div class="botones">
+            <button type="button" class="btn btn-primary">Entrar</button><br>
+        </div>
+        <div class="botones2">
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+        </div>
+
+     <!-- Main -->
+>>>>>>> a8bb7d62ba8a50e8fb412879e9af2f2264a0df60
    
 
      <!-- Footer -->
