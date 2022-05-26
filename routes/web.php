@@ -19,10 +19,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/posts', [App\Http\Controllers\HomeController::class, 'posts'])->name('posts');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/checking', [App\Http\Controllers\HomeController::class, 'checking'])->name('checking');
+
+Route::post('/checking', [App\Http\Controllers\HomeController::class, 'store'])->name('checking.store');
 
 Route::get('/login', [App\Http\Controllers\HomeController::class, 'login'])->name('login');
 
 Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
+
+Route::get('/fichajes', [App\Http\Controllers\HomeController::class, 'fichajes'])->name('fichajes');
+
 
 Auth::routes();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\fichaje;
 
 class HomeController extends Controller
 {
@@ -26,9 +28,20 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function posts()
+    public function checking()
     {
-        return view('posts');
+        return view('checking');
+    }
+
+    public function store(Request $request)
+    {
+        $fichaje = new Fichaje();
+
+        $fichaje->name=$request->name;
+
+         $fichaje->save();
+
+         return redirect()->route('fichajes', $fichaje);
     }
 
     public function login()
@@ -39,5 +52,12 @@ class HomeController extends Controller
     public function register()
     {
         return view('register');
+    }
+
+    public function fichajes()
+    {
+
+        $fichaje = fichaje::paginate();
+        return view('fichajes', compact('fichaje'));
     }
 }
