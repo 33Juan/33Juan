@@ -17,9 +17,10 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->timestamp('Entrada');
-            $table->timestamp('Salida');
-            $table->timestamp('Tiempo');
+            $table->date('Fecha');
+            $table->time('Entrada');
+            $table->time('Salida')->nullable();
+            $table->time('Tiempo');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

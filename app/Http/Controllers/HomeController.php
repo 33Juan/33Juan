@@ -45,10 +45,25 @@ class HomeController extends Controller
 
         $user_id = $request->input("user_id");
         $name = $request->input("name");
+        $fecha = $request->input("fecha");
+
+        //Fechas
+        $entrada = now()->isoFormat('H:mm:ss');
+        $salida = now()->isoFormat('H:mm:ss');
+        //Calculo de las horas totales
+        $sEntrada = strtotime($entrada);
+        $sSalida= strtotime($salida);
+        $segundos= $sEntrada-$sSalida;
+        $minutos= $segundos/60;
+        $tiempo=$minutos/60;
 
         $picaje = new Picaje;
         $picaje->user_id = Auth::id();
         $picaje->name = $name;
+        $picaje->fecha = now();
+        $picaje->entrada = $entrada;
+        $picaje->salida = $salida;
+        $picaje->tiempo = $tiempo;
 
         $picaje->save();
          return redirect()->route('fichajes');
