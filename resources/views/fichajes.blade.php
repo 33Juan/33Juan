@@ -23,8 +23,8 @@
      <section class="container-fluid content">
 
      <ul>
-            @foreach ($fichaje as $fichaje)
-                <li>{{$fichaje->created_at}}</li>
+            @foreach ($usuarios as $item)
+                <li>{{$item->id}},{{$item->name}}</li>
             @endforeach
         </ul>
 

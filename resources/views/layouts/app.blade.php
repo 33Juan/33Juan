@@ -31,14 +31,12 @@
                     <div class="logo">
                         <img src="{{asset('images/logo.webp')}}" width="63" alt="" loading="lazy">
                     </div>
+                    
                     <div class="main_list" id="mainListDiv">
                         <ul>
                             <li><a href="http://127.0.0.1:8000/home">Home</a></li>
                             <li><a href="http://127.0.0.1:8000/checking">Cheking</a></li>
-<<<<<<< HEAD
                             <li><a href="http://127.0.0.1:8000/fichajes">Fichajes</a></li>
-=======
->>>>>>> a8bb7d62ba8a50e8fb412879e9af2f2264a0df60
                         </ul>
                     </div>
     

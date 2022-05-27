@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\User;
 use App\Models\fichaje;
+use App\Models\picaje;
+
 
 class HomeController extends Controller
 {
@@ -30,21 +34,24 @@ class HomeController extends Controller
 
     public function checking()
     {
-        return view('checking');
-<<<<<<< HEAD
+        $user = Auth::user();
+        $user_id = Auth::id();
+        $data = array("lista_usu" => $user_id);
+        return view('checking', $data);
     }
 
     public function store(Request $request)
     {
-        $fichaje = new Fichaje();
 
-        $fichaje->name=$request->name;
+        $user_id = $request->input("user_id");
+        $name = $request->input("name");
 
-         $fichaje->save();
+        $picaje = new Picaje;
+        $picaje->user_id = Auth::id();
+        $picaje->name = $name;
 
-         return redirect()->route('fichajes', $fichaje);
-=======
->>>>>>> a8bb7d62ba8a50e8fb412879e9af2f2264a0df60
+        $picaje->save();
+         return redirect()->route('fichajes');
     }
 
     public function login()
@@ -60,7 +67,8 @@ class HomeController extends Controller
     public function fichajes()
     {
 
-        $fichaje = fichaje::paginate();
-        return view('fichajes', compact('fichaje'));
+        // $fichaje = fichaje::paginate();
+        $usuarios = User::paginate();
+        return view('fichajes', compact('usuarios'));
     }
 }

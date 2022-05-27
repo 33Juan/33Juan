@@ -13,10 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fichajes', function (Blueprint $table) {
-            $table->id();
+        Schema::create('picajes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
+            $table->timestamp('Entrada');
+            $table->timestamp('Salida');
+            $table->timestamp('Tiempo');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -27,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fichajes');
+        Schema::dropIfExists('picajes');
     }
 };
