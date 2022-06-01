@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->date('Fecha');
             $table->time('Entrada');
-            $table->time('Salida')->nullable();
-            $table->time('Tiempo');
+            $table->time('Salida');
+            $table->string('Tiempo');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

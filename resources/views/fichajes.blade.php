@@ -22,13 +22,40 @@
 
      <section class="container-fluid content">
 
-     <ul>
-            @foreach ($usuarios as $item)
-                <li>{{$item->id}},{{$item->name}}</li>
+        <!-- <ul>
+            @foreach ($picaje as $item)
+                <li>Entrada: {{$item->Entrada}}</li>
+                <li>Salida: {{$item->Salida}}</li>
             @endforeach
-        </ul>
+        </ul> -->
 
-   
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Entrada</th>
+      <th scope="col">Salida</th>
+      <th scope="col">Tiempo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    @foreach ($picaje as $item)
+      <th scope="row">{{$item->id}}</th>
+      <td>{{$item->name}}</td>
+      <td>{{$item->Entrada}}</td>
+      <td>{{$item->Salida}}</td>
+      <td>{{$item->Tiempo}}</td>
+    </tr>
+    @endforeach
+    
+  </tbody>
+</table>
+
+        <a href="{{route('fichajes.edit', $picaje->all())}}">Añadir Salida</a>
+        
+    
 
              <!-- Slide -->
              <br>

@@ -63,20 +63,28 @@
             </a>
         </div>
 
+        <h1>Editar</h1>
          <!-- Botonoes -->
 
-         <form action="{{route('checking.store')}}" method="POST">
+         <form action="{{route('fichajes.update', $picaje)}}" method="POST">
 
             @csrf
+            @method('put')
             <div class="botonEntrar">
-                <input type="hidden" name="id" value="{{ Auth::id()}}">
+                <!-- <input type="number" name="id" value="{{ $picaje->id}}">
                 <br>
-                <input type="hidden" name="name" value="{{ Auth::user()->name}}" placeholder="{{ Auth::user()->name}}">
+                <input type="text" name="name" value="{{ $picaje->name}}" placeholder="{{ $picaje->name}}">
                 <br>
-                <button type="submit" class="btn btn-primary">Entrar</button><br>
-            </div>
+                <input type="date" name="fecha" value="{{ $picaje->Fecha}}" placeholder="{{ $picaje->Fecha}}">
+                <br>
+                <input type="time" name="entrada" value="{{ $picaje->Entrada}}" placeholder="{{ $picaje->Entrada}}">
+                <br>
+                <input type="time" name="salida" value="{{ $picaje->Salida}}" placeholder="{{ $picaje->Salida}}">
+                <br>
+                <input type="time" name="tiempo" value="{{ $picaje->Tiempo}}" placeholder="{{ $picaje->Tiempo}}"> -->
 
-               
+                <button type="submit" class="btn btn-primary">Salir</button><br>
+            </div>               
          </form>
    
 

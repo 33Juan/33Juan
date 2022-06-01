@@ -31,5 +31,11 @@ Route::get('/register', [App\Http\Controllers\HomeController::class, 'register']
 
 Route::get('/fichajes', [App\Http\Controllers\HomeController::class, 'fichajes'])->name('fichajes');
 
+// Route::get('/fichajes{id}', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
+
+Route::put('/fichajes/{picaje}', [App\Http\Controllers\HomeController::class, 'update'])->name('fichajes.update');
+
+
+Route::get('/fichajes{picaje}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('fichajes.edit');
 
 Auth::routes();
