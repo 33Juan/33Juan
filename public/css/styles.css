@@ -1,4 +1,4 @@
-.botones {
+.botonEntrar {
   justify-content:center;
   text-align: center;
   display: flex;
@@ -14,22 +14,57 @@
   margin: 10px;
 }
 
+.enlace {
+  background-color: red;
+  color: white;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+.enlace:hover{
+  color: black;
+  text-decoration: underline;
+
+}
+
+.table, table {
+  width: 60%;
+  height: 60%;
+}
+
+.texto1 {
+  border: 1px solid black;
+  padding: 7px;
+  justify-content:center;
+  text-align: center;
+}
+
+.texto2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: red;
+}
+
+.texto3 {
+  text-indent: 50px;
+  text-align: center;
+  letter-spacing: 3px;
+}
 
 .texto {
   width: 0 auto;
-  height: 1900px;
+  height: 0 auto;
   justify-content:center;
   align-items: center;
   text-align: center;
   position: relative;
-  /* background-color:aliceblue; */
-  /* border: 1px solid; */
-  border-radius: 8px;
   letter-spacing: 3px;
   font-size: x-large;
   padding: 0 auto;
-  margin-right: 300px;
-  margin-left: 300px;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 /* Style menu */

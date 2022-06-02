@@ -22,40 +22,32 @@
 
      <section class="container-fluid content">
 
-        <!-- <ul>
-            @foreach ($picaje as $item)
-                <li>Entrada: {{$item->Entrada}}</li>
-                <li>Salida: {{$item->Salida}}</li>
-            @endforeach
-        </ul> -->
-
         <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Entrada</th>
-      <th scope="col">Salida</th>
-      <th scope="col">Tiempo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-    @foreach ($picaje as $item)
-      <th scope="row">{{$item->id}}</th>
-      <td>{{$item->name}}</td>
-      <td>{{$item->Entrada}}</td>
-      <td>{{$item->Salida}}</td>
-      <td>{{$item->Tiempo}}</td>
-    </tr>
-    @endforeach
-    
-  </tbody>
-</table>
+            <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Entrada</th>
+                <th scope="col">Salida</th>
+                <th scope="col">Tiempo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                @foreach ($picaje as $item)
+                <th scope="row">{{$item->id}}</th>
+                <td>{{$item->name}}</td>
+                <td>{{$item->Entrada}}</td>
+                <td>{{$item->Salida}}</td>
+                <td>{{$item->Tiempo}}</td>
+                </tr>
+                @endforeach
+                
+            </tbody>
+        </table>
 
-        <a href="{{route('fichajes.edit', $picaje->all())}}">Añadir Salida</a>
-        
-    
+        <a class="enlace" href="{{route('fichajes.edit', $item)}}">Actualizar Salida</a>
+        <br><br><br>
 
              <!-- Slide -->
              <br>
@@ -97,29 +89,6 @@
                 <span class="visually-hidden">Next</span>
             </a>
         </div>
-
-    
-
-     <!-- Footer -->
-     <footer class="container-fluid bg-main">
-        <div class="row text-center p-4">
-            <div class="mb-3">
-                <img src="{{asset('images/logo.webp')}}" alt="EyeProvidence logo" width="75" id="logofooter">
-            </div>
-            <div id="col-md-10">
-                <a href="https://www.facebook.com/33juannn">
-                    <img src="{{asset('images/facebook.png')}}" class="img-fluid" width="40px" alt="facebook youdevs">
-                </a>
-                <a href="https://www.instagram.com/33juannn">
-                    <img src="{{asset('images/instagram.png')}}" class="img-fluid" width="40px" alt="instagram youdevs">
-                </a>
-                <a href="https://www.youtube.com/channel/UCu72tA3eehJ7TNTPFpEGOcw">
-                    <img src="{{asset('images/youtube.png')}}" class="img-fluid" width="40px" alt="youtube youdevs">
-                </a>
-                <p class="mt-3">Copyright © 2020 Juan Vázquez, Blog. <br> Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 @endsection
 </body>
 </html>

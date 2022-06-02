@@ -17,10 +17,32 @@
 
      <!-- Contenido -->
      <div class="bg-6">
-        <div class="glitch" data-text="EyeProvidence">EyeProvidence</div>
+        <div class="glitch" data-text="EyeProvidence"></div>
     </div>
 
      <section class="container-fluid content">
+
+         <!-- Botonoes -->
+         <form action="{{route('fichajes.update', $picaje)}}" method="POST">
+            @csrf
+            @method('put')
+            <div class="botonEntrar" style="justify-content:center;text-align: center;display: flex;padding: 10px;margin: 10px;">
+            <h1>Salir ▶</h1>
+                <!-- <input type="number" name="id" value="{{ $picaje->id}}">
+                <br>
+                <input type="text" name="name" value="{{ $picaje->name}}" placeholder="{{ $picaje->name}}">
+                <br>
+                <input type="date" name="fecha" value="{{ $picaje->Fecha}}" placeholder="{{ $picaje->Fecha}}">
+                <br>
+                <input type="time" name="entrada" value="{{ $picaje->Entrada}}" placeholder="{{ $picaje->Entrada}}">
+                <br>
+                <input type="time" name="salida" value="{{ $picaje->Salida}}" placeholder="{{ $picaje->Salida}}">
+                <br>
+                <input type="time" name="tiempo" value="{{ $picaje->Tiempo}}" placeholder="{{ $picaje->Tiempo}}"> -->
+
+                <button type="submit" class="btn btn-primary">Salir</button><br>
+            </div>               
+         </form>
 
              <!-- Slide -->
              <br>
@@ -62,52 +84,6 @@
                 <span class="visually-hidden">Next</span>
             </a>
         </div>
-
-        <h1>Editar</h1>
-         <!-- Botonoes -->
-
-         <form action="{{route('fichajes.update', $picaje)}}" method="POST">
-
-            @csrf
-            @method('put')
-            <div class="botonEntrar">
-                <!-- <input type="number" name="id" value="{{ $picaje->id}}">
-                <br>
-                <input type="text" name="name" value="{{ $picaje->name}}" placeholder="{{ $picaje->name}}">
-                <br>
-                <input type="date" name="fecha" value="{{ $picaje->Fecha}}" placeholder="{{ $picaje->Fecha}}">
-                <br>
-                <input type="time" name="entrada" value="{{ $picaje->Entrada}}" placeholder="{{ $picaje->Entrada}}">
-                <br>
-                <input type="time" name="salida" value="{{ $picaje->Salida}}" placeholder="{{ $picaje->Salida}}">
-                <br>
-                <input type="time" name="tiempo" value="{{ $picaje->Tiempo}}" placeholder="{{ $picaje->Tiempo}}"> -->
-
-                <button type="submit" class="btn btn-primary">Salir</button><br>
-            </div>               
-         </form>
-   
-
-     <!-- Footer -->
-     <footer class="container-fluid bg-main">
-        <div class="row text-center p-4">
-            <div class="mb-3">
-                <img src="{{asset('images/logo.webp')}}" alt="EyeProvidence logo" width="75" id="logofooter">
-            </div>
-            <div id="col-md-10">
-                <a href="https://www.facebook.com/33juannn">
-                    <img src="{{asset('images/facebook.png')}}" class="img-fluid" width="40px" alt="facebook youdevs">
-                </a>
-                <a href="https://www.instagram.com/33juannn">
-                    <img src="{{asset('images/instagram.png')}}" class="img-fluid" width="40px" alt="instagram youdevs">
-                </a>
-                <a href="https://www.youtube.com/channel/UCu72tA3eehJ7TNTPFpEGOcw">
-                    <img src="{{asset('images/youtube.png')}}" class="img-fluid" width="40px" alt="youtube youdevs">
-                </a>
-                <p class="mt-3">Copyright © 2020 Juan Vázquez, Blog. <br> Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 @endsection
 </body>
 </html>

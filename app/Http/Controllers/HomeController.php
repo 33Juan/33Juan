@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
+use Illuminate\Support\Carbon;
+
 
 use App\Models\User;
 use App\Models\fichaje;
@@ -48,14 +51,15 @@ class HomeController extends Controller
         // $fecha = $request->input("fecha");
 
         //Fechas
-        $entrada = now()->isoFormat('H:mm:ss');
-        $salida = now()->isoFormat('H:mm:ss');
+        $entrada = Carbon::now();
+        $salida = Carbon::now();
+        
         // Calculo de las horas totales
-        $sEntrada = strtotime($entrada);
-        $sSalida= strtotime($salida);
-        $segundos= $sEntrada-$sSalida;
-        $minutos= $segundos/60;
-        $tiempo=$minutos/60;
+        // $sEntrada = strtotime($entrada);
+        // $sSalida= strtotime($salida);
+        // $segundos= $sEntrada-$sSalida;
+        // $minutos= $segundos/60;
+        // $tiempo=$minutos/60;
 
         $picaje = new Picaje;
         $picaje->user_id = Auth::id();
@@ -63,7 +67,8 @@ class HomeController extends Controller
         $picaje->fecha = now();
         $picaje->entrada = $entrada;
         $picaje->salida = $salida;
-        $picaje->tiempo = $tiempo;
+
+        $picaje->tiempo = $salida;
 
         $picaje->save();
          return redirect()->route('fichajes', $picaje);
@@ -88,13 +93,9 @@ class HomeController extends Controller
         return view('fichajes', compact('picaje'));
     }
 
-    public function show(Picaje $picaje) {
-
-        return view('fichajes.show', compact('picaje'));
-    }
 
     public function update(Request $request ,Picaje $picaje) {
-        $salida = now()->isoFormat('H:mm:ss');
+        $salida = Carbon::now();
         $entrada = $picaje->Entrada;
         
         $request->name = $picaje->name;
@@ -102,14 +103,23 @@ class HomeController extends Controller
         $request->entrada = $picaje->Entrada;
         $picaje->Salida = $salida;
 
-         // Calculo de las horas totales
-         $sEntrada = strtotime($entrada);
-         $sSalida= strtotime($salida);
-         $segundos= $sSalida-$sEntrada;
-         $minutos= $segundos/60/60;
-         $tiempo = number_format((float)$minutos, 2, ':', '');
+        //  Calculo de las horas totales
+        //  $sEntrada = strtotime($entrada);
+        //  $sSalida= strtotime($salida);
+        //  $segundos= $sSalida-$sEntrada;
+        //  $minutos= $segundos/60/60;
+        //  $tiempo = number_format((float)$minutos, 2, ':', '');
 
-        $picaje->Tiempo = $tiempo;
+        //convertimos la fecha 1 a objeto Carbon
+        $carbon1 = new \Carbon\Carbon("$entrada");
+        //convertimos la fecha 2 a objeto Carbon
+        $carbon2 = new \Carbon\Carbon("$salida");
+        //de esta manera sacamos la diferencia en minutos
+        $minutos=$carbon1->diffInMinutes($carbon2);
+        $segundos=$carbon1->diffInSeconds($carbon2);
+        $horas=$carbon1->diffInHours($carbon2);
+
+        $picaje->Tiempo =$horas . 0 . 0 . 0 . 0;
 
         $picaje->save();
         return redirect()->route('fichajes', $picaje);
@@ -118,8 +128,8 @@ class HomeController extends Controller
     }
 
     public function edit(Picaje $picaje) {
-        
 
         return view('edit', compact('picaje'));
     }
+
 }

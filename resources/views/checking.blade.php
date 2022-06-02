@@ -22,6 +22,24 @@
 
      <section class="container-fluid content">
 
+     <div class="texto1">
+        <h1 class="texto2">GuÍa de uso</h1>
+        <p class="texto3">Para poder fichar debe clicar en el botón que dice 'ENTRAR' justo debajo de este recuadro. Seguidamente se le redireccionará a la página de fichajes donde se almacenará la hora de entrada, DEBAJO de la tabla hay un enlace que dice 'ACTUALIZAR SALIDA' le clicas y te lleva a una vista donde hay un botón que dice 'SALIR' le clicas y ya estaría todo hecho.</p>
+    </div>
+
+      <!-- Boton entrar a fichar -->
+
+      <form action="{{route('checking.store')}}" method="POST">
+        @csrf
+        <div class="botonEntrar">
+            <input type="hidden" name="id" value="{{ Auth::id()}}">
+            <br>
+            <input type="hidden" name="name" value="{{ Auth::user()->name}}" placeholder="{{ Auth::user()->name}}">
+            <br>
+            <button type="submit" class="btn btn-primary">Entrar</button><br>
+        </div>
+    </form>
+
              <!-- Slide -->
              <br>
         <div id="myCarousel" class="carousel slide bg-inverse w-50 ms-auto me-auto" data-bs-ride="carousel">
@@ -62,44 +80,6 @@
                 <span class="visually-hidden">Next</span>
             </a>
         </div>
-
-         <!-- Botonoes -->
-
-         <form action="{{route('checking.store')}}" method="POST">
-
-            @csrf
-            <div class="botonEntrar">
-                <input type="hidden" name="id" value="{{ Auth::id()}}">
-                <br>
-                <input type="hidden" name="name" value="{{ Auth::user()->name}}" placeholder="{{ Auth::user()->name}}">
-                <br>
-                <button type="submit" class="btn btn-primary">Entrar</button><br>
-            </div>
-
-               
-         </form>
-   
-
-     <!-- Footer -->
-     <footer class="container-fluid bg-main">
-        <div class="row text-center p-4">
-            <div class="mb-3">
-                <img src="{{asset('images/logo.webp')}}" alt="EyeProvidence logo" width="75" id="logofooter">
-            </div>
-            <div id="col-md-10">
-                <a href="https://www.facebook.com/33juannn">
-                    <img src="{{asset('images/facebook.png')}}" class="img-fluid" width="40px" alt="facebook youdevs">
-                </a>
-                <a href="https://www.instagram.com/33juannn">
-                    <img src="{{asset('images/instagram.png')}}" class="img-fluid" width="40px" alt="instagram youdevs">
-                </a>
-                <a href="https://www.youtube.com/channel/UCu72tA3eehJ7TNTPFpEGOcw">
-                    <img src="{{asset('images/youtube.png')}}" class="img-fluid" width="40px" alt="youtube youdevs">
-                </a>
-                <p class="mt-3">Copyright © 2020 Juan Vázquez, Blog. <br> Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 @endsection
 </body>
 </html>

@@ -31,11 +31,11 @@
             en una empresa o institución. </p><br>
             Los terminales de control de personal también se denominan terminales de control de presencia, control de asistencia, control horario o relojes de fichar. Estos sistemas tienen definidos para cada usuario registrado, unos calendarios, horarios, vacaciones, turnos de trabajo, etc. en que el usuario registrado tiene permiso.
             <br><br>
-            <img src="{{asset('images/gif1.gif')}}" alt="gif" width="700px" height="450px">
+            <img src="{{asset('images/gif1.gif')}}" alt="gif" width="50%" height="20%">
             <p>control de personal permite gestionar el saldo horario de cada trabajador, permisos laborales, horas extras, asistencia, control de turnos, activación de sirenas y alarmas horarias así como para gestionar las diferentes incidencias de acceso.
             </p>
             <br>
-            <img src="{{asset('images/gif2.png')}}" alt="gif2" width="700px" height="450px">
+            <img src="{{asset('images/gif2.png')}}" alt="gif2" width="50%" height="20%">
             <br><br>
             Otra característica común de los terminales de control de personal es la posibilidad de descargar el registro o logs del histórico de accesos, donde hay información de la identidad de cada usuario, el código de incidencia de acceso, la hora del acceso.
             La autenticación de cada usuario puede realizarse mediante tecnología biométrica, proximidad, tarjeta inteligente, banda magnética, código de barras o password.
@@ -81,28 +81,6 @@
             </a>
         </div>
         </div>
-    
-
-     <!-- Footer -->
-     <footer class="container-fluid bg-main">
-        <div class="row text-center p-4">
-            <div class="mb-3">
-                <img src="{{asset('images/logo.webp')}}" alt="EyeProvidence logo" width="75" id="logofooter">
-            </div>
-            <div id="col-md-10">
-                <a href="https://www.facebook.com/33juannn">
-                    <img src="{{asset('images/facebook.png')}}" class="img-fluid" width="40px" alt="facebook youdevs">
-                </a>
-                <a href="https://www.instagram.com/33juannn">
-                    <img src="{{asset('images/instagram.png')}}" class="img-fluid" width="40px" alt="instagram youdevs">
-                </a>
-                <a href="https://www.youtube.com/channel/UCu72tA3eehJ7TNTPFpEGOcw">
-                    <img src="{{asset('images/youtube.png')}}" class="img-fluid" width="40px" alt="youtube youdevs">
-                </a>
-                <p class="mt-3">Copyright © 2020 Juan Vázquez, Blog. <br> Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 @endsection
 </body>
 </html>

@@ -28,9 +28,9 @@
                     EyeProvidence®
                 </a>
                     <!-- nav propio -->
-                    <div class="logo">
+                    <a class="logo" href="http://127.0.0.1:8000/home">
                         <img src="{{asset('images/logo.webp')}}" width="63" alt="" loading="lazy">
-                    </div>
+                    </a>
                     
                     <div class="main_list" id="mainListDiv">
                         <ul>
@@ -92,6 +92,26 @@
 
         <main class="py-4">
             @yield('content')
+            <!-- Footer -->
+            <footer class="container-fluid bg-main">
+                <div class="row text-center p-4">
+                    <div class="mb-3">
+                        <img src="{{asset('images/logo.webp')}}" alt="EyeProvidence logo" width="75" id="logofooter">
+                    </div>
+                    <div id="col-md-10">
+                        <a href="https://www.facebook.com/33juannn">
+                            <img src="{{asset('images/facebook.png')}}" class="img-fluid" width="40px" alt="facebook youdevs">
+                        </a>
+                        <a href="https://www.instagram.com/33juannn">
+                            <img src="{{asset('images/instagram.png')}}" class="img-fluid" width="40px" alt="instagram youdevs">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCu72tA3eehJ7TNTPFpEGOcw">
+                            <img src="{{asset('images/youtube.png')}}" class="img-fluid" width="40px" alt="youtube youdevs">
+                        </a>
+                        <p class="mt-3">Copyright © 2020 Juan Vázquez, Blog. <br> Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
 </body>
